@@ -1,5 +1,5 @@
 
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Create non-root user
 RUN useradd -m -u 1000 user
