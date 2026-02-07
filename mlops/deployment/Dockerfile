@@ -12,8 +12,7 @@ WORKDIR $HOME/app
 # Copy only requirements first 
 COPY requirements.txt .
 
-# Upgrade pip tooling
-RUN pip install --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir numpy==1.26.4
 
 # Install deps as root
 RUN pip install --no-cache-dir -r requirements.txt
@@ -26,4 +25,4 @@ USER user
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false"]
+CMD ["streamlit", "run", "app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false"]
